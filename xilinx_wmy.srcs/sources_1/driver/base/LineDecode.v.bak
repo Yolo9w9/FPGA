@@ -1,0 +1,215 @@
+/**************************************************
+*-- 编码类型选择
+*-- NRZ
+*-- BNRZ
+*-- RZ
+*-- BRZ
+*-- Manchester
+*-- MILLER
+*-- CMI
+*-- PST
+*-- AMI
+*-- HDB3
+**************************************************/
+
+module LineDecode(
+					input wire clk,
+					input wire reset_n,			
+					input wire[7:0] reg1,//时钟
+					input wire[7:0] reg2,//译码模式选择
+					input wire datain,
+					input wire codein1,
+					input wire codein2,
+					output reg out1,
+					output reg out2		
+);
+
+always @(*)begin
+	begin
+		case(reg2)
+		1:begin  out1 = declk10;out2 = Datad[1];end
+		2:begin  out1 = declk10;out2 = Datad[1];end
+		3:begin  out1 = declk10;out2 = Datad[1];end
+		4:begin  out1 = declk10;out2 = Datad[2];end
+		5:begin  out1 = declk10;out2 = Datad[2];end
+		6:begin  out1 = declk10;out2 = Datad[2];end
+		7:begin  out1 = declk10;out2 = Datad[2];end
+		8:begin  out1 = declk10;out2 = Datad[3];end
+		9:begin  out1 = declk10;out2 = Datad[2];end
+		10:begin  out1 = declk10;out2 = Datad[7];end
+		default:begin  out1 = declk10;out2 = Datad[7];end
+		endcase
+	end
+end
+
+
+reg valid;
+reg[20:0] cnt;
+reg[1:0] ddclk;
+reg[8:0] Datad;
+always @(posedge clk)begin
+	
+	if(codein2 == 0 || codein1 == 0 )
+	begin
+		cnt <= 0;
+		valid <= 1;
+	end
+	else
+	begin
+		if(cnt < 20'hfffff)begin
+			cnt <= cnt + 1;
+		end
+		else
+			valid <= 0;
+	end
+	
+	if(valid)
+	begin
+	ddclk <= {ddclk[0],declk10};
+	if(ddclk == 2'b10)
+		Datad = {Datad[7:0],datain};
+	end
+end
+///////////////////////////////////////////////////////////////
+wire syn_clk;
+wire[1:0] Syn_data;
+wire test_p;
+ReDecode ReDecode_inst(                 //对脉冲进行整形
+			.clk(clk),       //clk-65.536
+			.reset_n(reset_n),   //复位
+			.reg1(reg1),//系统时钟寄存器
+			.reg2(),//当前时钟寄存器
+			.syn1(codein1),      //syn+
+			.syn2(codein2),      //syn-
+			.syn_clk(syn_clk),   //时钟输出
+			.syn_Data(Syn_data),
+			.data(test_p)
+);
+///////////////////////////////////////////////////////////////
+//NRZ
+wire declk1,decode1;
+DeNRZ lineDecode_inst1(
+					.clk(clk),
+					.reset_n(reset_n),
+					.reg01(reg1),
+					.code1(codein1),
+					.code2(codein2),
+					.dedlk(declk1),
+					.decode(decode1)
+					
+);			
+///////////////////////////////////////////////////////////////
+//BNRZ
+wire declk2,decode2;
+DeBNRZ Linecode_inst2(
+					.clk(clk),
+					.reset_n(reset_n),
+					.reg01(reg1),
+					.code1(codein1),
+					.code2(codein2),
+					.dedlk(declk2),
+					.decode(decode2)
+);
+///////////////////////////////////////////////////////////////
+//RZ
+wire declk3,decode3;
+DeRZ Linecode_inst3(
+					.clk(clk),
+					.reset_n(reset_n),
+					.reg01(reg1),
+					.code1(codein1),
+					.code2(codein2),
+					.dedlk(declk3),
+					.decode(decode3)
+);
+///////////////////////////////////////////////////////////////
+//BRZ
+wire declk4,decode4;
+DeBRZ Linecode_inst4(
+					.clk(clk),
+					.reset_n(reset_n),
+					.reg01(reg1),
+					.code1(codein1),
+					.code2(codein2),
+					.dedlk(declk4),
+					.decode(decode4)
+);
+///////////////////////////////////////////////////////////////
+//Manchester
+wire code15,code25;
+Manchester Linecode_inst5(
+					.clk(clk),
+					.reset_n(reset_n),			
+					.reg1(reg1),//编码类型
+					.reg2(),
+					.dataclk(dataclk),
+					.data(data),
+					.ocode1(code15),
+					.ocode2(code25)				
+);
+///////////////////////////////////////////////////////////////
+//CMI
+wire code16,code26;
+CMI Linecode_inst6(
+					.clk(clk),
+					.reset_n(reset_n),			
+					.reg1(reg1),//编码类型
+					.reg2(),
+					.dataclk(dataclk),
+					.data(data),
+					.ocode1(code16),
+					.ocode2(code26)				
+);
+///////////////////////////////////////////////////////////////
+//MILLER
+wire code17,code27;
+MILLER Linecode_inst7(
+					.clk(clk),
+					.reset_n(reset_n),			
+					.reg1(reg1),//编码类型
+					.reg2(),
+					.dataclk(dataclk),
+					.data(data),
+					.ocode1(code17),
+					.ocode2(code27)				
+);
+///////////////////////////////////////////////////////////////
+//PST
+wire code18,code28;
+PST Linecode_inst8(
+					.clk(clk),
+					.reset_n(reset_n),			
+					.reg1(reg1),//编码类型
+					.reg2(),
+					.dataclk(dataclk),
+					.data(data),
+					.ocode1(code18),
+					.ocode2(code28)				
+);
+///////////////////////////////////////////////////////////////
+//AMI
+wire declk9,decode9;
+DeAMI Linecode_inst9(
+					.clk(clk),
+					.reset_n(reset_n),
+					.reg01(reg1),
+					.code1(codein1),
+					.code2(codein2),
+					.dedlk(declk9),
+					.decode(decode9)
+);
+///////////////////////////////////////////////////////////////
+//HDB3
+wire declk10,decode10;
+DeHDB3 Linecode_inst10(
+					.clk(clk),
+					.reset_n(reset_n),
+					.reg01(reg1),
+					.code1(codein1),
+					.code2(codein2),
+					.dedlk(declk10),
+					.decode(decode10)
+);
+
+endmodule
+

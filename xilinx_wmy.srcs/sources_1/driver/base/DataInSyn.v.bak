@@ -1,0 +1,108 @@
+module DataInSyn(
+					input wire clk,
+					input wire reset_n,
+					input wire DataIn1,
+					input wire DataIn2,
+					output reg Dataout1,
+					output reg Dataout2
+);
+
+reg[1:0] D1buf;
+reg[10:0] Dcount1;
+
+reg[1:0] ST1;
+always @(posedge clk)begin
+	case(ST1)
+	0:
+	begin
+		D1buf <= {D1buf[0],DataIn1};
+		Dataout1 <= 1'b1;
+		Dcount1 <= 0;
+		if(D1buf == 2'b10)
+			ST1 <= 1;
+	end
+	1:
+	begin
+		if(Dcount1 == 200)begin
+			Dcount1 <= 0;
+			if(DataIn1 == 0)
+			begin
+				Dataout1 <= 1'b0;
+				ST1 <=2;
+			end
+			else
+			begin
+				Dataout1 <= 1'b1;
+				ST1 <=0;				
+			end
+		end
+		else
+			Dcount1 <= Dcount1 + 1'b1;
+	end
+	2:
+	begin
+		if(Dcount1 == 500)
+		begin
+			Dcount1 <= 0;
+			Dataout1 <= 1'b1;
+			ST1 <=0;
+		end
+		else
+			Dcount1 <= Dcount1 + 1'b1;
+	end
+	default:ST1 <=0;
+	endcase
+end
+
+
+reg[1:0] D2buf;
+reg[10:0] Dcount2;
+
+reg[1:0] ST2;
+always @(posedge clk)begin
+	case(ST2)
+	0:
+	begin
+		D2buf <= {D2buf[0],DataIn2};
+		Dcount2 <= 0;
+		Dataout2 <= 1'b1;
+		if(D2buf == 2'b10)
+			ST2 <= 2'b01;
+		else
+			ST2 <= 2'b00;
+	end
+	1:
+	begin
+
+		if(Dcount2 == 200)begin
+			if(DataIn2 == 0)
+			begin
+				Dataout2 <= 1'b0;
+				Dcount2 <= 0;
+				ST2 <=2'b10;
+			end
+			else
+			begin
+				Dataout2 <= 1'b1;
+				ST2 <=2'b00;				
+			end
+		end
+		else
+			Dcount2 <= Dcount2 + 1'b1;
+	end
+	2:
+	begin
+		if(Dcount2 == 125)
+		begin
+			Dcount2 <= 0;
+			Dataout2 <= 1'b1;
+			ST2 <=2'b00;
+		end
+		else
+			Dcount2 <= Dcount2 + 1'b1;
+	end
+	default:ST2 <=2'b00;
+	endcase
+end
+
+endmodule

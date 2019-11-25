@@ -1,0 +1,1510 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Nov 18 11:18:12 2019
+# Process ID: 10624
+# Current directory: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1
+# Command line: vivado.exe -log xilinx_wmy.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source xilinx_wmy.tcl
+# Log file: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/xilinx_wmy.vds
+# Journal file: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source xilinx_wmy.tcl -notrace
+Command: synth_design -top xilinx_wmy -part xc7a35tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11604 
+WARNING: [Synth 8-992] PN_seq is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:81]
+WARNING: [Synth 8-992] baseband_rate is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:282]
+WARNING: [Synth 8-992] data_count is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:372]
+WARNING: [Synth 8-992] wmy_count is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:373]
+WARNING: [Synth 8-992] data_wmy_count_valid is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:374]
+WARNING: [Synth 8-992] wmy_time_500ms is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:375]
+WARNING: [Synth 8-992] wmy_o is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:377]
+WARNING: [Synth 8-992] wmy_clk_o is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:378]
+WARNING: [Synth 8-992] data_c is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:379]
+WARNING: [Synth 8-992] wm_c is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:380]
+WARNING: [Synth 8-992] base_code_type is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:452]
+WARNING: [Synth 8-992] E1_Data_Out is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:474]
+WARNING: [Synth 8-992] data_countFS is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:559]
+WARNING: [Synth 8-992] wmy_countFS is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:560]
+WARNING: [Synth 8-992] data_wmy_count_validFS is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:561]
+WARNING: [Synth 8-992] wmy_time_500msFS is already implicitly declared earlier [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:562]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 406.566 ; gain = 113.297
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'xilinx_wmy' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:23]
+	Parameter uart_send_delay bound to: 200000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/.Xil/Vivado-10624-Jack-PC/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/.Xil/Vivado-10624-Jack-PC/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/uart_rx.v:1]
+	Parameter NCO bound to: 32'b00000000001110011001100110011001 
+	Parameter RX_LENGTH bound to: 48 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/uart_rx.v:52]
+WARNING: [Synth 8-6014] Unused sequential element start_cc_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/uart_rx.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (2#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/uart_rx.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:170]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:167]
+INFO: [Synth 8-6157] synthesizing module 'LineCode' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:15]
+INFO: [Synth 8-6157] synthesizing module 'NRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/NRZ.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'NRZ' (3#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/NRZ.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'NRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:48]
+INFO: [Synth 8-6157] synthesizing module 'BNRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BNRZ.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'BNRZ' (4#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BNRZ.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'BNRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:61]
+INFO: [Synth 8-6157] synthesizing module 'RZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/RZ.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RZ' (5#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/RZ.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'RZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:73]
+INFO: [Synth 8-6157] synthesizing module 'BRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BRZ.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'BRZ' (6#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BRZ.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'BRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:86]
+INFO: [Synth 8-6157] synthesizing module 'Manchester' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/Manchester.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Manchester' (7#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/Manchester.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'Manchester' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:99]
+INFO: [Synth 8-6157] synthesizing module 'CMI' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/CMI.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'CMI' (8#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/CMI.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'CMI' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:112]
+INFO: [Synth 8-6157] synthesizing module 'MILLER' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/MILLER.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'MILLER' (9#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/MILLER.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'MILLER' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:125]
+INFO: [Synth 8-6157] synthesizing module 'PST' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/PST.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PST' (10#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/PST.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'PST' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:138]
+INFO: [Synth 8-6157] synthesizing module 'AMI' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/AMI.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'AMI' (11#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/AMI.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'AMI' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:151]
+INFO: [Synth 8-6157] synthesizing module 'HDB3' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/HDB3.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/HDB3.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'HDB3' (12#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/HDB3.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'reg1' does not match port width (1) of module 'HDB3' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:164]
+INFO: [Synth 8-6155] done synthesizing module 'LineCode' (13#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineCode.v:15]
+INFO: [Synth 8-6157] synthesizing module 'LineDecode' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineDecode.v:15]
+INFO: [Synth 8-6157] synthesizing module 'DataInSyn' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DataInSyn.v:1]
+	Parameter COUNT_1K bound to: 65536 - type: integer 
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+	Parameter COUNT_4096K bound to: 16 - type: integer 
+	Parameter COUNT_8192K bound to: 8 - type: integer 
+	Parameter COUNT_16384K bound to: 4 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DataInSyn.v:49]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DataInSyn.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'DataInSyn' (14#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DataInSyn.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeNRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeNRZ.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'DeNRZ' (15#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeNRZ.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeBNRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeBNRZ.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'DeBNRZ' (16#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeBNRZ.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeRZ.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'DeRZ' (17#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeRZ.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeBRZ' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeBRZ.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'DeBRZ' (18#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeBRZ.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeManchester' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+	Parameter COUNT_4096K bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element dcode2_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:126]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:162]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:188]
+INFO: [Synth 8-6155] done synthesizing module 'DeManchester' (19#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeCMI' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+	Parameter COUNT_4096K bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element dcode2_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:126]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:161]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:187]
+INFO: [Synth 8-6155] done synthesizing module 'DeCMI' (20#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeMILLER' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+	Parameter COUNT_4096K bound to: 16 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element dcode2_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:126]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:161]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:189]
+INFO: [Synth 8-6155] done synthesizing module 'DeMILLER' (21#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DePST' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+	Parameter COUNT_4096K bound to: 16 - type: integer 
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:161]
+WARNING: [Synth 8-3936] Found unconnected internal register 'declk_div2buf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:207]
+INFO: [Synth 8-6155] done synthesizing module 'DePST' (22#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeAMI' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeAMI.v:1]
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element dcode1_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeAMI.v:119]
+INFO: [Synth 8-6155] done synthesizing module 'DeAMI' (23#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeAMI.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DeHDB3' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeHDB3.v:1]
+	Parameter COUNT_1K bound to: 65536 - type: integer 
+	Parameter COUNT_2K bound to: 32768 - type: integer 
+	Parameter COUNT_4K bound to: 16384 - type: integer 
+	Parameter COUNT_8K bound to: 8192 - type: integer 
+	Parameter COUNT_16K bound to: 4096 - type: integer 
+	Parameter COUNT_32K bound to: 2048 - type: integer 
+	Parameter COUNT_64K bound to: 1024 - type: integer 
+	Parameter COUNT_128K bound to: 512 - type: integer 
+	Parameter COUNT_256K bound to: 256 - type: integer 
+	Parameter COUNT_512K bound to: 128 - type: integer 
+	Parameter COUNT_1024K bound to: 64 - type: integer 
+	Parameter COUNT_2048K bound to: 32 - type: integer 
+	Parameter COUNT_4096K bound to: 16 - type: integer 
+	Parameter COUNT_8192K bound to: 8 - type: integer 
+	Parameter COUNT_16384K bound to: 4 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element dcode1_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeHDB3.v:49]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '32' to '31' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeHDB3.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'DeHDB3' (24#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeHDB3.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'LineDecode' (25#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/LineDecode.v:15]
+INFO: [Synth 8-6157] synthesizing module 'wmy' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PN15' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PN15' (26#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:1]
+WARNING: [Synth 8-350] instance 'PN_gen_inst2' of module 'PN15' requires 30 connections, but only 11 given [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:68]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:330]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:403]
+WARNING: [Synth 8-6014] Unused sequential element Buf_cnt_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:247]
+INFO: [Synth 8-6155] done synthesizing module 'wmy' (27#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:1]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/uart_tx.v:1]
+	Parameter NCO bound to: 32'b00000000001110011001100110011001 
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/uart_tx.v:62]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/uart_tx.v:42]
+WARNING: [Synth 8-6014] Unused sequential element start_sample_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/uart_tx.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (28#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/uart_tx.v:1]
+INFO: [Synth 8-6157] synthesizing module 'E1_Framer' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/E1_Framer.v:4]
+	Parameter Mulframe_Head bound to: 6'b001011 
+	Parameter Stuff bound to: 1'b0 
+INFO: [Synth 8-226] default block is never used [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/E1_Framer.v:97]
+INFO: [Synth 8-226] default block is never used [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/E1_Framer.v:190]
+INFO: [Synth 8-6155] done synthesizing module 'E1_Framer' (29#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/E1_Framer.v:4]
+INFO: [Synth 8-6157] synthesizing module 'dpll_easy' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/dpll_easy.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dpll_easy' (30#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/dpll_easy.v:1]
+INFO: [Synth 8-6157] synthesizing module 'demultiple' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:121]
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_0' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/.Xil/Vivado-10624-Jack-PC/realtime/fifo_generator_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_0' (31#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/.Xil/Vivado-10624-Jack-PC/realtime/fifo_generator_0_stub.v:6]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:392]
+WARNING: [Synth 8-6014] Unused sequential element valid0_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:91]
+WARNING: [Synth 8-6014] Unused sequential element sop2_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:380]
+INFO: [Synth 8-6155] done synthesizing module 'demultiple' (32#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:1]
+WARNING: [Synth 8-6014] Unused sequential element demux_count_reg was removed.  [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:507]
+INFO: [Synth 8-6155] done synthesizing module 'xilinx_wmy' (33#1) [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:23]
+WARNING: [Synth 8-3331] design demultiple has unconnected port head[7]
+WARNING: [Synth 8-3331] design dpll_easy has unconnected port reset_n
+WARNING: [Synth 8-3331] design uart_tx has unconnected port parity
+WARNING: [Synth 8-3331] design PN15 has unconnected port reset_n
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[7]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[6]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[5]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[4]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[3]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[2]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[1]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[0]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[7]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[6]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[5]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[4]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[3]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[2]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[1]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[0]
+WARNING: [Synth 8-3331] design DeAMI has unconnected port reset_n
+WARNING: [Synth 8-3331] design DeMILLER has unconnected port code2
+WARNING: [Synth 8-3331] design DeCMI has unconnected port code2
+WARNING: [Synth 8-3331] design DeManchester has unconnected port code2
+WARNING: [Synth 8-3331] design DeBRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design DeRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design DeBNRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design DeNRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[7]
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[6]
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[5]
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[4]
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[3]
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[2]
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[1]
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[0]
+WARNING: [Synth 8-3331] design HDB3 has unconnected port reset_n
+WARNING: [Synth 8-3331] design HDB3 has unconnected port reg1
+WARNING: [Synth 8-3331] design HDB3 has unconnected port reg2
+WARNING: [Synth 8-3331] design AMI has unconnected port reset_n
+WARNING: [Synth 8-3331] design AMI has unconnected port reg1
+WARNING: [Synth 8-3331] design AMI has unconnected port reg2
+WARNING: [Synth 8-3331] design PST has unconnected port reset_n
+WARNING: [Synth 8-3331] design PST has unconnected port reg1
+WARNING: [Synth 8-3331] design PST has unconnected port reg2
+WARNING: [Synth 8-3331] design MILLER has unconnected port reset_n
+WARNING: [Synth 8-3331] design MILLER has unconnected port reg1
+WARNING: [Synth 8-3331] design MILLER has unconnected port reg2
+WARNING: [Synth 8-3331] design CMI has unconnected port reset_n
+WARNING: [Synth 8-3331] design CMI has unconnected port reg1
+WARNING: [Synth 8-3331] design CMI has unconnected port reg2
+WARNING: [Synth 8-3331] design Manchester has unconnected port reset_n
+WARNING: [Synth 8-3331] design Manchester has unconnected port reg1
+WARNING: [Synth 8-3331] design Manchester has unconnected port reg2
+WARNING: [Synth 8-3331] design BRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design BRZ has unconnected port reg1
+WARNING: [Synth 8-3331] design BRZ has unconnected port reg2
+WARNING: [Synth 8-3331] design RZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design RZ has unconnected port reg1
+WARNING: [Synth 8-3331] design RZ has unconnected port reg2
+WARNING: [Synth 8-3331] design BNRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design BNRZ has unconnected port reg1
+WARNING: [Synth 8-3331] design BNRZ has unconnected port reg2
+WARNING: [Synth 8-3331] design NRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design NRZ has unconnected port reg1
+WARNING: [Synth 8-3331] design NRZ has unconnected port reg2
+WARNING: [Synth 8-3331] design uart_rx has unconnected port reset_n
+WARNING: [Synth 8-3331] design xilinx_wmy has unconnected port FPGA_RESET
+WARNING: [Synth 8-3331] design xilinx_wmy has unconnected port DATA
+WARNING: [Synth 8-3331] design xilinx_wmy has unconnected port WMD
+WARNING: [Synth 8-3331] design xilinx_wmy has unconnected port M4SPI2_MOSI
+WARNING: [Synth 8-3331] design xilinx_wmy has unconnected port M4SPI2_MISO
+WARNING: [Synth 8-3331] design xilinx_wmy has unconnected port M4SPI2_SCK
+WARNING: [Synth 8-3331] design xilinx_wmy has unconnected port M4SPI2_NSS
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 462.539 ; gain = 169.270
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 462.539 ; gain = 169.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 462.539 ; gain = 169.270
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'instance_name'
+Finished Parsing XDC File [f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'instance_name'
+Parsing XDC File [f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'demultiple_inst/fifo_generator_inst0'
+Finished Parsing XDC File [f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'demultiple_inst/fifo_generator_inst0'
+Parsing XDC File [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/constrs_1/new/xilinx_wmy.xdc]
+Finished Parsing XDC File [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/constrs_1/new/xilinx_wmy.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/constrs_1/new/xilinx_wmy.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/xilinx_wmy_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/xilinx_wmy_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 805.582 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 805.582 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 805.582 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 805.582 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'demultiple_inst/fifo_generator_inst0' at clock pin 'clk' is different from the actual clock period '7.629', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 805.582 ; gain = 512.313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 805.582 ; gain = 512.313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for SYS_CLK. (constraint file  f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for SYS_CLK. (constraint file  f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for instance_name. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for demultiple_inst/fifo_generator_inst0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 805.582 ; gain = 512.313
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "phase" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "phase0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'ST_reg' in module 'HDB3'
+INFO: [Synth 8-5544] ROM "ST" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ocode1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "flagv" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'ST1_reg' in module 'DataInSyn'
+INFO: [Synth 8-802] inferred FSM for state register 'ST2_reg' in module 'DataInSyn'
+INFO: [Synth 8-5544] ROM "ST1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ST2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Dcount10" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Dcount20" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "CmpCount1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CmpCount" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "CmpCount1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CmpCount" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "CmpCount1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CmpCount" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "dedlk" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "CmpCount1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CmpCount" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "dedlk" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:162]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:188]
+INFO: [Synth 8-5545] ROM "CmpCount1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "CmpCount" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "declkx2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ready" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dcode11" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:161]
+INFO: [Synth 8-5545] ROM "CmpCount1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "CmpCount" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "declkx2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ready" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dcode11" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:189]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:161]
+INFO: [Synth 8-5545] ROM "CmpCount1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "CmpCount" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "declkx2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ready" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dcode11" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'declk_div2buf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:207]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dcode22_reg' and it is trimmed from '4' to '3' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:172]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dcode11_reg' and it is trimmed from '4' to '3' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:171]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:161]
+INFO: [Synth 8-5546] ROM "CmpCount1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CmpCount" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "dcode11" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "CmpCount1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "CmpCount" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "dedlk" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "decode" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '31' to '30' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeHDB3.v:82]
+INFO: [Synth 8-5544] ROM "dedlk" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r3" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn25_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:366]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn24_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:353]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn23_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:340]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn22_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:327]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn21_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:314]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn20_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:298]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn19_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:285]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn18_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:271]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn17_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:257]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn16_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:244]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn15_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:230]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn14_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:216]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn13_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:202]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn12_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:189]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn11_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:176]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn10_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:162]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn2_reg' and it is trimmed from '3' to '2' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:51]
+WARNING: [Synth 8-3936] Found unconnected internal register 'count_wm_c_delta_reg' and it is trimmed from '48' to '46' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:494]
+WARNING: [Synth 8-3936] Found unconnected internal register 'WMbuf_reg' and it is trimmed from '26' to '25' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:229]
+WARNING: [Synth 8-3936] Found unconnected internal register 'data_valid_delay_reg' and it is trimmed from '16' to '15' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:61]
+INFO: [Synth 8-802] inferred FSM for state register 'ST_reg' in module 'wmy'
+INFO: [Synth 8-5544] ROM "data_valid" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "INSERT_Count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ST" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Mbuf" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "count_c" won't be mapped to RAM because address size (48) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "ST" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ST" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "busy" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "phase" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "phase0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Slot_Cnt" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'sclk_dly_reg' and it is trimmed from '6' to '5' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:201]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FS_dly_reg' and it is trimmed from '6' to '5' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:202]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'demultiple'
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "valid" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "count_c" won't be mapped to RAM because address size (48) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count_c" won't be mapped to RAM because address size (48) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "rdreq" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "d0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "d1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "d2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "d3" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "find_frame_head" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "wmy_pause" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wmy_run" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "base_code_type" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "baseband_type" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "baseband_sw16" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "baseband_rate" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg03" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clk_out_in" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "NCO_WMY_clk_nei" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "NCO" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "interface_select" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "FS_BSse" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg04" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recv_edge" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "send_edge" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sendst" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wmy_pulse_data" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                                0 |                               00
+                 iSTATE0 |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                             0000
+                 iSTATE0 |                             0010 |                             0001
+                 iSTATE1 |                             0100 |                             0010
+                 iSTATE2 |                             1000 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ST_reg' using encoding 'one-hot' in module 'HDB3'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                                0 |                               00
+                 iSTATE0 |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ST1_reg' using encoding 'sequential' in module 'DataInSyn'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                                0 |                               00
+                 iSTATE0 |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ST2_reg' using encoding 'sequential' in module 'DataInSyn'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                             0000
+                  iSTATE |                               01 |                             0001
+                 iSTATE0 |                               10 |                             0010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ST_reg' using encoding 'sequential' in module 'wmy'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                                0 |                               00
+                 iSTATE0 |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                              000 |                              000
+                 iSTATE2 |                              001 |                              001
+                  iSTATE |                              010 |                              010
+                 iSTATE3 |                              011 |                              011
+                 iSTATE0 |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'demultiple'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 805.582 ; gain = 512.313
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     48 Bit       Adders := 3     
+	   3 Input     48 Bit       Adders := 2     
+	   3 Input     46 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 15    
+	   2 Input     31 Bit       Adders := 2     
+	   2 Input     21 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 5     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 36    
+	   4 Input      1 Bit       Adders := 14    
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
++---Registers : 
+	               48 Bit    Registers := 7     
+	               46 Bit    Registers := 1     
+	               32 Bit    Registers := 5     
+	               31 Bit    Registers := 4     
+	               30 Bit    Registers := 9     
+	               26 Bit    Registers := 1     
+	               25 Bit    Registers := 17    
+	               21 Bit    Registers := 1     
+	               16 Bit    Registers := 6     
+	               15 Bit    Registers := 1     
+	               11 Bit    Registers := 3     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 38    
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 7     
+	                4 Bit    Registers := 13    
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 28    
+	                1 Bit    Registers := 166   
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 4     
+	   3 Input     48 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	  22 Input     32 Bit        Muxes := 2     
+	   4 Input     31 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 3     
+	   3 Input     26 Bit        Muxes := 2     
+	   2 Input     21 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 12    
+	   2 Input     15 Bit        Muxes := 9     
+	   2 Input     11 Bit        Muxes := 2     
+	   3 Input     11 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 16    
+	   2 Input      4 Bit        Muxes := 7     
+	   3 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   8 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 181   
+	   4 Input      1 Bit        Muxes := 22    
+	   3 Input      1 Bit        Muxes := 17    
+	   6 Input      1 Bit        Muxes := 1     
+	  28 Input      1 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 4     
+	  21 Input      1 Bit        Muxes := 13    
+	  20 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module xilinx_wmy 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 6     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 21    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	  22 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 16    
+	  21 Input      1 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 8     
+	  20 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 2     
+Module uart_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 16    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 7     
+Module NRZ 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module BNRZ 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module RZ 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module BRZ 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module Manchester 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module CMI 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module MILLER 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 4     
+Module PST 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   4 Input      1 Bit        Muxes := 3     
+Module AMI 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module HDB3 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 8     
+Module LineCode 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module DataInSyn 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     31 Bit       Adders := 1     
++---Registers : 
+	               31 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 14    
+Module DeNRZ 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module DeBNRZ 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module DeRZ 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module DeBRZ 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module DeManchester 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               30 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+	   3 Input      1 Bit        Muxes := 2     
+Module DeCMI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               30 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	   3 Input      1 Bit        Muxes := 2     
+Module DeMILLER 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               30 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 1     
+Module DePST 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     31 Bit       Adders := 1     
++---Registers : 
+	               31 Bit    Registers := 1     
+	               30 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   4 Input     31 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 17    
+	   3 Input      1 Bit        Muxes := 1     
+Module DeAMI 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module DeHDB3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               31 Bit    Registers := 2     
+	               30 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 10    
+	   3 Input      1 Bit        Muxes := 1     
+Module LineDecode 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module PN15 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 17    
+	   4 Input      1 Bit       Adders := 7     
++---Registers : 
+	               25 Bit    Registers := 16    
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module wmy 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     48 Bit       Adders := 1     
+	   3 Input     48 Bit       Adders := 1     
+	   3 Input     46 Bit       Adders := 1     
+	   2 Input     21 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 17    
+	   4 Input      1 Bit       Adders := 7     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               48 Bit    Registers := 4     
+	               46 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               25 Bit    Registers := 1     
+	               21 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 16    
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 2     
+	   2 Input     26 Bit        Muxes := 3     
+	   3 Input     26 Bit        Muxes := 2     
+	   2 Input     21 Bit        Muxes := 4     
+	   2 Input     11 Bit        Muxes := 2     
+	   3 Input     11 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 21    
+	   6 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 10    
+	  28 Input      1 Bit        Muxes := 1     
+Module uart_tx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 8     
+	  12 Input      1 Bit        Muxes := 1     
+Module E1_Framer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   8 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module dpll_easy 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module demultiple 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     48 Bit       Adders := 2     
+	   3 Input     48 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               48 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 13    
+	                5 Bit    Registers := 4     
+	                1 Bit    Registers := 20    
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 2     
+	   3 Input     48 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 10    
+	   5 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:162]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeManchester.v:188]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:161]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeCMI.v:187]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:161]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dedlkbuf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeMILLER.v:189]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:161]
+WARNING: [Synth 8-3936] Found unconnected internal register 'declk_div2buf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DePST.v:207]
+WARNING: [Synth 8-3936] Found unconnected internal register 'clkbuf_reg' and it is trimmed from '30' to '29' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/DeHDB3.v:82]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn24_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:353]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn23_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:340]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn22_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:327]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn21_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:314]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn20_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:298]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn19_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:285]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn18_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:271]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn17_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:257]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn16_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:244]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn15_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:230]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn14_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:216]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn13_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:202]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn12_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:189]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn11_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:176]
+WARNING: [Synth 8-3936] Found unconnected internal register 'dn10_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/pn15.v:162]
+WARNING: [Synth 8-3936] Found unconnected internal register 'data_valid_delay_reg' and it is trimmed from '15' to '14' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:61]
+WARNING: [Synth 8-3936] Found unconnected internal register 'WMbuf_reg' and it is trimmed from '25' to '24' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/wmy.v:229]
+INFO: [Synth 8-5545] ROM "count_c" won't be mapped to RAM because address size (48) is larger than maximum supported(25)
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst2/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BNRZ.v:15]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst2/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BNRZ.v:16]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst2/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BNRZ.v:17]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst3/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/RZ.v:15]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst3/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/RZ.v:16]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst3/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/RZ.v:17]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst4/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BRZ.v:15]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst4/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BRZ.v:16]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst4/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/BRZ.v:17]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst5/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/Manchester.v:15]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst5/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/Manchester.v:16]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst5/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/Manchester.v:17]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst6/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/CMI.v:16]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst6/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/CMI.v:17]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst6/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/CMI.v:18]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst7/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/MILLER.v:16]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst7/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/MILLER.v:17]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst7/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/MILLER.v:18]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst8/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/PST.v:20]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst8/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/PST.v:21]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst8/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/PST.v:22]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst9/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/AMI.v:15]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst9/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/AMI.v:16]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst9/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/AMI.v:17]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst10/dclk_reg' into 'LineCode_init1/Linecode_inst1/dclk_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/HDB3.v:21]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst10/dclk1_reg' into 'LineCode_init1/Linecode_inst1/dclk1_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/HDB3.v:22]
+INFO: [Synth 8-4471] merging register 'LineCode_init1/Linecode_inst10/dclk2_reg' into 'LineCode_init1/Linecode_inst1/dclk2_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/driver/base/HDB3.v:23]
+INFO: [Synth 8-4471] merging register 'DMUX0_reg' into 'dpll_inst/din0_reg' [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/new/xilinx_wmy.v:517]
+WARNING: [Synth 8-3936] Found unconnected internal register 'demultiple_inst/FS_dly_reg' and it is trimmed from '5' to '4' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:202]
+WARNING: [Synth 8-3936] Found unconnected internal register 'demultiple_inst/sclk_dly_reg' and it is trimmed from '5' to '4' bits. [F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/demultiple.v:201]
+INFO: [Synth 8-5544] ROM "U_E1_Framer/Slot_Cnt" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "demultiple_inst/rdreq" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "demultiple_inst/state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "demultiple_inst/count_c" won't be mapped to RAM because address size (48) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3331] design PN15 has unconnected port reset_n
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[7]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[6]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[5]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[4]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[3]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[2]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[1]
+WARNING: [Synth 8-3331] design wmy has unconnected port reg01[0]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[7]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[6]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[5]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[4]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[3]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[2]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[1]
+WARNING: [Synth 8-3331] design DeHDB3 has unconnected port rate[0]
+WARNING: [Synth 8-3331] design DeAMI has unconnected port reset_n
+WARNING: [Synth 8-3331] design DeMILLER has unconnected port code2
+WARNING: [Synth 8-3331] design DeCMI has unconnected port code2
+WARNING: [Synth 8-3331] design DeManchester has unconnected port code2
+WARNING: [Synth 8-3331] design DeBRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design DeRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design DeBNRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design DeNRZ has unconnected port reset_n
+WARNING: [Synth 8-3331] design DataInSyn has unconnected port rate[7]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst7/dcode1_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst7/dcode1_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst6/dcode1_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst6/dcode1_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst5/dcode1_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst5/dcode1_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/DataInSyn_inst_0/D1buf_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/DataInSyn_inst_0/D2buf_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/sclk_dly_reg[0]' (FD) to 'pre_demux_sclk_reg'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/DataInSyn_inst_0/D1buf_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/DataInSyn_inst_0/D2buf_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst8/dcode2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst9/dcode2_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst10/dcode2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst9/dcode2_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst10/dcode2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst8/dcode2_reg[0]' (FD) to 'LineDecode_inst/lineDecode_inst1/dcode2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst8/dcode2_reg[1]' (FD) to 'LineDecode_inst/lineDecode_inst1/dcode2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst8/dcode1_reg[0]' (FD) to 'LineDecode_inst/lineDecode_inst1/dcode1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst8/dcode1_reg[1]' (FD) to 'LineDecode_inst/lineDecode_inst1/dcode1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst3/dcode2_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst10/dcode2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst3/dcode2_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst10/dcode2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/lineDecode_inst1/dcode2_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst2/dcode2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[2]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[2]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[3]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[3]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[4]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[4]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[5]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[5]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[6]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[6]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[7]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[7]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[8]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[8]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[9]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[9]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[10]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[10]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[11]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[11]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[12]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[12]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[13]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[13]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[14]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[14]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[15]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[15]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[16]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[16]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[17]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[17]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[18]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[18]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[19]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[19]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[20]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[20]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[21]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[21]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[22]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[22]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[23]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[23]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[24]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[24]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[25]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[25]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[26]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[26]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[27]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[27]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[28]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[28]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[29]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/CmpCount1_reg[29]' (FD) to 'LineDecode_inst/Linecode_inst10/CmpCount_reg[30]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/dcode2_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst4/dcode2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst10/dcode2_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst4/dcode2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst4/dcode1_reg[0]' (FD) to 'LineDecode_inst/Linecode_inst3/dcode1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst4/dcode1_reg[1]' (FD) to 'LineDecode_inst/Linecode_inst3/dcode1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst2/dcode2_reg[1]' (FD) to 'LineDecode_inst/lineDecode_inst1/dcode2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst2/dcode1_reg[0]' (FD) to 'LineDecode_inst/lineDecode_inst1/dcode1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'LineDecode_inst/Linecode_inst2/dcode1_reg[1]' (FD) to 'LineDecode_inst/lineDecode_inst1/dcode1_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_6/\demultiple_inst/count_wm_c_pre_reg[0] )
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/count_c_reg[47]' (FDRE) to 'demultiple_inst/count_c_reg[46]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/count_c_reg[46]' (FDRE) to 'demultiple_inst/count_c_reg[45]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/count_c_reg[45]' (FDRE) to 'demultiple_inst/count_c_reg[44]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/count_c_reg[44]' (FDRE) to 'demultiple_inst/count_c_reg[43]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/count_c_reg[43]' (FDRE) to 'demultiple_inst/count_c_reg[42]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/count_c_reg[42]' (FDRE) to 'demultiple_inst/count_c_reg[41]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/count_c_reg[41]' (FDRE) to 'demultiple_inst/count_c_reg[40]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\demultiple_inst/count_c_reg[40] )
+INFO: [Synth 8-3886] merging instance 'Frame_Head_reg[6]' (FDRE) to 'Frame_Head_reg[2]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/data0_reg[5]' (FDE) to 'demultiple_inst/data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'Frame_Head_reg[0]' (FDSE) to 'Frame_Head_reg[1]'
+INFO: [Synth 8-3886] merging instance 'Frame_Head_reg[1]' (FDSE) to 'Frame_Head_reg[3]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/data0_reg[0]' (FDE) to 'demultiple_inst/data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'Frame_Head_reg[2]' (FDRE) to 'Frame_Head_reg[5]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/data0_reg[1]' (FDE) to 'demultiple_inst/data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'Frame_Head_reg[3]' (FDSE) to 'Frame_Head_reg[4]'
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/data0_reg[2]' (FDE) to 'demultiple_inst/data_reg[3]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Frame_Head_reg[4] )
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/data0_reg[3]' (FDE) to 'demultiple_inst/data_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Frame_Head_reg[5] )
+INFO: [Synth 8-3886] merging instance 'demultiple_inst/data0_reg[4]' (FDE) to 'demultiple_inst/data_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\LineCode_init1/Linecode_inst3/ocode1_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\LineCode_init1/Linecode_inst1/ocode1_reg )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 805.582 ; gain = 512.313
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'instance_name/clk_out1' to pin 'instance_name/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 813.453 ; gain = 520.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 871.016 ; gain = 577.746
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'LineCode_init1/Linecode_inst4/ocode2_reg' (FDE) to 'LineCode_init1/Linecode_inst3/ocode2_reg'
+INFO: [Synth 8-3886] merging instance 'LineCode_init1/Linecode_inst2/ocode2_reg' (FDE) to 'LineCode_init1/Linecode_inst1/ocode2_reg'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 872.020 ; gain = 578.750
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:44 . Memory (MB): peak = 872.020 ; gain = 578.750
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:44 . Memory (MB): peak = 872.020 ; gain = 578.750
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 872.020 ; gain = 578.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 872.020 ; gain = 578.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 872.020 ; gain = 578.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 872.020 ; gain = 578.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|xilinx_wmy  | LineDecode_inst/Linecode_inst9/clkbuf_reg[9] | 10     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn4_reg[3]             | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn5_reg[4]             | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn6_reg[5]             | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn7_reg[6]             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn8_reg[7]             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn9_reg[8]             | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn9_reg[3]             | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn10_reg[9]            | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn11_reg[10]           | 9      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn12_reg[11]           | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn12_reg[3]            | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn13_reg[12]           | 9      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn14_reg[13]           | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn14_reg[5]            | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn15_reg[14]           | 14     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn16_reg[15]           | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn16_reg[11]           | 9      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn17_reg[16]           | 14     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn18_reg[17]           | 11     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn18_reg[6]            | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn19_reg[18]           | 14     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn19_reg[4]            | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn20_reg[19]           | 17     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn21_reg[20]           | 19     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn22_reg[21]           | 21     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn23_reg[22]           | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn23_reg[4]            | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn24_reg[23]           | 17     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn24_reg[6]            | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|xilinx_wmy  | wmy_inst/PN_gen_inst2/dn25_reg[24]           | 22     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|xilinx_wmy  | U4TXD3_reg                                   | 4      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|xilinx_wmy  | uart_rx_inst/r10_reg[7]                      | 7      | 8     | NO           | NO                 | YES               | 8      | 0       | 
++------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------+----------+
+|      |BlackBox name    |Instances |
++------+-----------------+----------+
+|1     |clk_wiz_0        |         1|
+|2     |fifo_generator_0 |         1|
++------+-----------------+----------+
+
+Report Cell Usage: 
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |clk_wiz_0        |     1|
+|2     |fifo_generator_0 |     1|
+|3     |BUFG             |     1|
+|4     |CARRY4           |   417|
+|5     |LUT1             |   247|
+|6     |LUT2             |   264|
+|7     |LUT3             |   237|
+|8     |LUT4             |   221|
+|9     |LUT5             |   223|
+|10    |LUT6             |   426|
+|11    |MUXF7            |    37|
+|12    |MUXF8            |     8|
+|13    |SRL16E           |    37|
+|14    |SRLC32E          |     4|
+|15    |FDCE             |    37|
+|16    |FDRE             |  1865|
+|17    |FDSE             |    58|
+|18    |IBUF             |     8|
+|19    |OBUF             |     9|
++------+-----------------+------+
+
+Report Instance Areas: 
++------+---------------------+-------------+------+
+|      |Instance             |Module       |Cells |
++------+---------------------+-------------+------+
+|1     |top                  |             |  4116|
+|2     |  LineCode_init1     |LineCode     |    78|
+|3     |    Linecode_inst1   |NRZ          |    18|
+|4     |    Linecode_inst10  |HDB3         |    25|
+|5     |    Linecode_inst2   |BNRZ         |     1|
+|6     |    Linecode_inst3   |RZ           |     3|
+|7     |    Linecode_inst4   |BRZ          |     1|
+|8     |    Linecode_inst5   |Manchester   |     2|
+|9     |    Linecode_inst6   |CMI          |     4|
+|10    |    Linecode_inst7   |MILLER       |     7|
+|11    |    Linecode_inst8   |PST          |    13|
+|12    |    Linecode_inst9   |AMI          |     4|
+|13    |  LineDecode_inst    |LineDecode   |  1166|
+|14    |    DataInSyn_inst_0 |DataInSyn    |   177|
+|15    |    Linecode_inst10  |DeHDB3       |   216|
+|16    |    Linecode_inst2   |DeBNRZ       |    79|
+|17    |    Linecode_inst3   |DeRZ         |    77|
+|18    |    Linecode_inst4   |DeBRZ        |    83|
+|19    |    Linecode_inst5   |DeManchester |    86|
+|20    |    Linecode_inst6   |DeCMI        |    91|
+|21    |    Linecode_inst7   |DeMILLER     |    93|
+|22    |    Linecode_inst8   |DePST        |    98|
+|23    |    Linecode_inst9   |DeAMI        |    76|
+|24    |    lineDecode_inst1 |DeNRZ        |    90|
+|25    |  U_E1_Framer        |E1_Framer    |    70|
+|26    |  demultiple_inst    |demultiple   |   688|
+|27    |  dpll_inst          |dpll_easy    |    45|
+|28    |  uart_rx_inst       |uart_rx      |   235|
+|29    |  uart_tx_inst       |uart_tx      |    88|
+|30    |  wmy_inst           |wmy          |  1220|
+|31    |    PN_gen_inst2     |PN15         |   165|
++------+---------------------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 872.020 ; gain = 578.750
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 102 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 872.020 ; gain = 235.707
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 872.020 ; gain = 578.750
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 462 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 872.020 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+324 Infos, 209 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 872.020 ; gain = 590.215
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 872.020 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/xilinx_wmy.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file xilinx_wmy_utilization_synth.rpt -pb xilinx_wmy_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 18 11:19:11 2019...

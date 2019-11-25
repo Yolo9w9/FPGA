@@ -1,0 +1,608 @@
+/***********************************************************
+*-- 4通道数据发送接口
+clk             input	1	   系统主时钟
+Sendreq         input	1	   STMN32请求发送信号,高电平脉冲
+fifowr_clk      input	1	   示波器采样时钟，采样率
+sink_valid0     input	1	   ch1 valid
+sink_data0      input	8	   ch1 data
+sink_valid1     input	1	   ch2 valid
+sink_data1      input	8	   ch2 data
+sink_valid2     input	1	   ch3 valid
+sink_data2      input	8	   ch3 data
+sink_valid3     input	1	   ch4 valid
+sink_data3		 input	8	   ch4 data					
+SCK             output	1	   SPI时钟信号，4.096MHz，高电平触发，低电平采样;
+MOSI            input	1	   SPI数据线输入;
+MISO            output	1	   SPI数据线输出;
+NSS             output	1	   SPI启动信号，每次传输16bit数据，先拉高NSS;
+************************************************************/
+module DataClient(
+								input wire clk,
+								input wire reset_n,
+								input wire reg_run_stop,                //run/stop
+								input wire [1:0] reg_trig_ch,          //触发通道
+								input wire [7:0] reg_trig_level,       //触发电平
+								input wire [1:0] reg_trig_type,        //触发方式，上升沿还是下降沿
+								input wire [1:0] reg_trig_mode,        //触发同步模式，单次触发还是自动触发？？？？？？？？？？？
+								input wire Sendreq,
+								input wire fifowr_clk,
+								input wire sink_valid0,
+								input wire [7:0] sink_data0,
+								input wire sink_valid1,
+								input wire [7:0]	sink_data1,
+								input wire sink_valid2,
+								input wire [7:0]	sink_data2,
+								input wire sink_valid3,
+								input wire [7:0]	sink_data3,
+								
+								output reg single_trig_ready,
+								//SPI interface
+								output  SCK,
+								input   MOSI,
+								output  MISO,
+								output  NSS
+								);
+
+////////////////////////////////////////////////////////////
+initial
+begin
+	fifo_wr_enable <= 1'b1;
+
+end
+
+
+wire   recv_enable0 = fifo_wr_enable & sink_valid0 & trig_is_ok;//接收缓存使能
+wire   recv_enable1 = fifo_wr_enable & sink_valid1 & trig_is_ok;//
+wire   recv_enable2 = fifo_wr_enable & sink_valid2 & trig_is_ok;//
+wire   recv_enable3 = fifo_wr_enable & sink_valid3 & trig_is_ok;//
+								
+reg rdreq0;
+wire rdempty0;
+wire wrfull0;
+wire [10:0]	rdusedw0;	
+wire [15:0]	q0;
+reg fifo_rd_clk;
+reg  fifo0_aclr;
+SportDataClient_fifo fifo_0(
+	.aclr(fifo0_aclr),
+	.data(sink_data0),               //-- 写入的fifo数据
+	.rdclk(fifo_rd_clk),             //-- 读时钟
+	.rdreq(rdreq0),                  //-- 读请求-高电平使能
+	.wrclk(fifowr_clk),              //-- 写时钟
+	.wrreq(recv_enable0),            //-- 写使能-高电平使能
+	.q(q0),                          //-- 
+	.rdempty(rdempty0),                   
+	.rdusedw(rdusedw0),              //-- 当前数据量
+	.wrfull(wrfull0)                 //-- 满状态
+);
+
+reg rdreq1;	
+wire rdempty1;
+wire wrfull1;
+wire [10:0]	rdusedw1;		
+wire [15:0]	q1;
+reg  fifo1_aclr;
+SportDataClient_fifo fifo_1(
+   .aclr(fifo1_aclr),
+	.data(sink_data1),
+	.rdclk(fifo_rd_clk),
+	.rdreq(rdreq1),
+	.wrclk(fifowr_clk),
+	.wrreq(recv_enable1),
+	.q(q1),
+	.rdempty(rdempty1),
+	.rdusedw(rdusedw1),
+	.wrfull(wrfull1));	
+
+reg rdreq2;
+wire rdempty2;
+wire wrfull2;
+wire [10:0]	rdusedw2;
+wire [15:0]	q2;
+reg  fifo2_aclr;
+SportDataClient_fifo fifo_2(
+   .aclr(fifo2_aclr),
+	.data(sink_data2),
+	.rdclk(fifo_rd_clk),
+	.rdreq(rdreq2),
+	.wrclk(fifowr_clk),
+	.wrreq(recv_enable2),
+	.q(q2),
+	.rdempty(rdempty2),
+	.rdusedw(rdusedw2),
+	.wrfull(wrfull2)
+);
+	
+	
+reg rdreq3;	
+wire rdempty3;
+wire wrfull3;
+wire [10:0]	rdusedw3;		
+wire [15:0]	q3;	
+reg  fifo3_aclr;
+
+SportDataClient_fifo fifo_3(
+   .aclr(fifo3_aclr),
+	.data(sink_data3),
+	.rdclk(fifo_rd_clk),
+	.rdreq(rdreq3),
+	.wrclk(fifowr_clk),
+	.wrreq(recv_enable3),
+	.q(q3),
+	.rdempty(rdempty3),
+	.rdusedw(rdusedw3),
+	.wrfull(wrfull3));
+
+reg [3:0]	divcount;
+reg rdreq;	
+
+reg rdreq_delay0;
+reg rdreq_delay1;
+reg rdreq_delay2;
+reg [31:0]	q;
+/////////////////////////////////////////////////////////////////////////
+//            触发状态机                                                //
+//                                                                     //
+/////////////////////////////////////////////////////////////////////////
+
+reg[2:0]  Osc_clk_buf; 
+reg       Osc_clk_valid;
+always @(posedge clk)begin
+	Osc_clk_buf <= {Osc_clk_buf[1:0],fifowr_clk};
+	if(Osc_clk_buf[2:1] == 2'b01)
+		Osc_clk_valid <= 1'b1;
+	else
+		Osc_clk_valid <= 1'b0;
+
+end		
+		
+reg[2:0] trig_state;
+reg [7:0] sink_data0_buf;
+reg [7:0] sink_data1_buf;
+reg [7:0] sink_data2_buf;
+reg [7:0] sink_data3_buf;
+
+reg  trig_is_ok=0;
+
+reg[20:0] osc_retrig_cnt;
+always @(posedge clk)begin
+		sink_data0_buf <= sink_data0;
+		sink_data1_buf <= sink_data1;
+		sink_data2_buf <= sink_data2;
+		sink_data3_buf <= sink_data3;
+
+		case(trig_state)
+		0:begin//等待触发
+		if(reg_run_stop == 1)
+		begin
+			case(reg_trig_ch)//触发通道
+			0://ch1
+			begin
+				
+				case(reg_trig_type)//触发类型
+				0:begin//上升沿触发
+					if((sink_data0_buf < reg_trig_level) && (sink_data0 >= reg_trig_level))//上升沿
+					begin
+						trig_state <= 3'd1;//已触发
+						osc_retrig_cnt <= 0;
+					end
+					else
+					begin
+						if(Osc_clk_valid)
+							if(osc_retrig_cnt == 2000)
+							begin
+								trig_state <= 3'd1;//长时间未触发,发送1次
+								osc_retrig_cnt <= 0;
+							end
+							else
+								osc_retrig_cnt <= osc_retrig_cnt + 1'b1;
+					end
+					
+				end
+				1:begin//下降沿触发
+					if((sink_data0_buf > reg_trig_level) && (sink_data0 <= reg_trig_level))//上升沿
+					begin
+						trig_state <= 3'd1;//已触发
+						osc_retrig_cnt <= 0;
+					end
+					else
+					begin
+						if(Osc_clk_valid)
+							if(osc_retrig_cnt == 2000)
+							begin
+								trig_state <= 3'd1;//长时间未触发,发送1次
+								osc_retrig_cnt <= 0;
+							end
+							else
+								osc_retrig_cnt <= osc_retrig_cnt + 1'b1;
+					end
+				end
+				endcase
+			end
+			1://ch2
+			begin
+				case(reg_trig_type)//触发类型
+				0:begin//上升沿触发
+					if((sink_data1_buf < reg_trig_level) && (sink_data1 >= reg_trig_level))//上升沿
+					begin
+						trig_state <= 3'd1;//已触发
+						osc_retrig_cnt <= 0;
+					end
+					else
+					begin
+						if(Osc_clk_valid)
+							if(osc_retrig_cnt == 2000)
+							begin
+								trig_state <= 3'd1;//长时间未触发,发送1次
+								osc_retrig_cnt <= 0;
+							end
+							else
+								osc_retrig_cnt <= osc_retrig_cnt + 1'b1;
+					end
+					
+				end
+				1:begin//下降沿触发
+					if((sink_data1_buf > reg_trig_level) && (sink_data1 <= reg_trig_level))//上升沿
+					begin
+						trig_state <= 3'd1;//已触发
+						osc_retrig_cnt <= 0;
+					end
+					else
+					begin
+						if(Osc_clk_valid)
+							if(osc_retrig_cnt == 2000)
+							begin
+								trig_state <= 3'd1;//长时间未触发,发送1次
+								osc_retrig_cnt <= 0;
+							end
+							else
+								osc_retrig_cnt <= osc_retrig_cnt + 1'b1;
+					end
+				end
+				endcase
+			end
+			2://ch3
+			begin
+				case(reg_trig_type)//触发类型
+				0:begin//上升沿触发
+					if((sink_data2_buf < reg_trig_level) && (sink_data2 >= reg_trig_level))//上升沿
+					begin
+						trig_state <= 3'd1;//已触发
+					end
+					else
+					begin
+						if(Osc_clk_valid)
+							if(osc_retrig_cnt == 2000)
+							begin
+								trig_state <= 3'd1;//长时间未触发,发送1次
+								osc_retrig_cnt <= 0;
+							end
+							else
+								osc_retrig_cnt <= osc_retrig_cnt + 1'b1;
+					end
+					
+				end
+				1:begin//下降沿触发
+					if((sink_data2_buf > reg_trig_level) && (sink_data2 <= reg_trig_level))//上升沿
+					begin
+						trig_state <= 3'd1;//已触发
+					end
+					else
+					begin
+						if(Osc_clk_valid)
+							if(osc_retrig_cnt == 2000)
+							begin
+								trig_state <= 3'd1;//长时间未触发,发送1次
+								osc_retrig_cnt <= 0;
+							end
+							else
+								osc_retrig_cnt <= osc_retrig_cnt + 1'b1;
+					end
+				end
+				endcase
+			end	
+			3://ch4
+			begin
+				case(reg_trig_type)//触发类型
+				0:begin//上升沿触发
+					if((sink_data3_buf < reg_trig_level) && (sink_data3 >= reg_trig_level))//上升沿
+					begin
+						trig_state <= 3'd1;//已触发
+					end
+					else
+					begin
+						if(Osc_clk_valid)
+							if(osc_retrig_cnt == 2000)
+							begin
+								trig_state <= 3'd1;//长时间未触发,发送1次
+								osc_retrig_cnt <= 0;
+							end
+							else
+								osc_retrig_cnt <= osc_retrig_cnt + 1'b1;
+					end
+					
+				end
+				1:begin//下降沿触发
+					if((sink_data3_buf > reg_trig_level) && (sink_data3 <= reg_trig_level))//上升沿
+					begin
+						trig_state <= 3'd1;//已触发
+					end
+					else
+					begin
+						if(Osc_clk_valid)
+							if(osc_retrig_cnt == 2000)
+							begin
+								trig_state <= 3'd1;//长时间未触发,发送1次
+								osc_retrig_cnt <= 0;
+							end
+							else
+								osc_retrig_cnt <= osc_retrig_cnt + 1'b1;
+					end
+				end
+				endcase
+			end	
+			endcase
+		end
+		end
+		1://
+		begin
+			trig_is_ok <= 1'b1;//已触发,开始接收
+			if(reg_trig_mode == 1)//自动触发
+			  trig_state <= 3'd2;
+			else//单次触发
+			begin
+			  trig_state <= 3'd3;
+			  single_trig_ready <= 1'b1;
+			end 
+			
+		end
+		2:begin//自动触发会进入此状态
+			if(state == 7)
+			begin
+				trig_state <= 0;
+				trig_is_ok <= 0;
+			end
+		end
+		3:begin//单次触发会进入此状态
+		   
+			if(state == 7)
+			begin
+				trig_state <= 4;
+				trig_is_ok <= 0;
+				single_trig_ready <= 1'b0;
+			end
+		end
+		4:begin//单次触发停止后，收到运行命令会
+			if(reg_run_stop == 1)
+			begin
+				trig_state <= 0;			
+			end
+		end
+		endcase
+end
+
+/////////////////////////////////////////////////////////////////////////
+//            发送状态机                                                //
+//                                                                     //
+/////////////////////////////////////////////////////////////////////////
+
+reg [5:0]	route;
+reg [8:0]	rdusedw;
+
+reg [3:0]	state;
+reg [15:0]	frame;
+parameter FRAME_LENGTH = 1500/2;
+
+reg [1:0]	frame_head_count;
+
+reg valid;
+reg [15:0]	data;
+
+reg [15:0]	frame0,frame1,frame2,frame3;
+reg [15:0]	sendcount;
+reg fifo_wr_enable;
+reg Sendreq0,Sendreq1,Sendreq2;
+reg[2:0] delaycnt;
+reg[4:0] resend_cnt;
+always @(posedge clk)begin
+	Sendreq0 <= Sendreq;// & reg_run_stop
+	Sendreq1 <= Sendreq0;
+	Sendreq2 <= Sendreq1;
+	case(state)
+	0://等待发送数据请求
+	begin
+	if({Sendreq2,Sendreq1} == 2'b01)//req信号上升沿
+			state <= 4'd1;
+	end
+	1://
+	begin
+		if(wrfull0)//判断fifo数据是否已满，已满则发送，否则接着判断。如果fifo0满, 则4个都满;
+		begin
+			state <= 4'd2;
+			fifo_wr_enable <= 0;    //停止fifo接收;
+			
+		end
+	end
+	
+	2://开始发送帧头数据
+	begin	
+		delaycnt <= delaycnt + 1'b1;
+		if(delaycnt == 0)
+		begin
+			if(Spi_Ready == 1'b1)      //SPI is ready
+			begin
+				if(frame_head_count < 3)	
+				begin
+					Spi_Valid <= 1'b1;
+					frame_head_count <= frame_head_count + 1;
+					case(frame_head_count)
+					2'd0:data <= 16'hf6f6;
+					2'd1:data <= 16'h28f6;
+					2'd2:data <= 16'h2828;
+					endcase
+				end
+				else	begin  state <= 4'd3; route <= 0;frame_head_count <= 0;end	
+			end
+			else
+			begin
+				Spi_Valid <= 1'b0;
+			end
+		end
+	end
+	3:
+	begin
+		delaycnt <= delaycnt + 1'b1;
+		if(delaycnt == 0)
+		begin
+			if(Spi_Ready == 1'b1)//SPI is ready
+			begin
+				Spi_Valid <= 1'b1;
+				case(route)
+					2'd0:data <= 16'h00a6;
+					2'd1:data <= 16'h01a6;
+					2'd2:data <= 16'h02a6;
+					2'd3:data <= 16'h03a6;
+				endcase
+				fifo_rd_clk <= 1'b0;
+				state <= 4'd4;
+				sendcount <= 0;
+				
+			end
+			else
+			begin
+				Spi_Valid <= 1'b0;
+			end
+		end
+	end
+	4:
+	begin
+			case(route)
+			2'd0:begin rdreq0 <= 1'b1; end
+			2'd1:begin rdreq1 <= 1'b1; end
+			2'd2:begin rdreq2 <= 1'b1; end
+			2'd3:begin rdreq3 <= 1'b1; end
+			endcase
+			state <= 4'd5;
+			sendcount <= 0;
+			Spi_Valid <= 1'b0;
+	end
+	5:
+	begin
+		if(route == 2'd0)
+		begin
+			if(resend_cnt == 5'h16)
+			begin
+				resend_cnt <= 0;
+				state <= 4'd6;
+			end
+			else
+				resend_cnt <= resend_cnt + 1'b1;
+				
+				fifo_rd_clk <= ~resend_cnt[2];
+		end
+		else
+		begin
+			fifo_rd_clk <= 1'b1;
+			state <= 4'd6;
+		end 
+	end
+	6:
+	begin
+		delaycnt <= delaycnt + 1'b1;
+		if(delaycnt == 0)
+		begin
+			if(Spi_Ready == 1'b1)//SPI is ready
+			begin
+				sendcount <= sendcount + 1'b1;
+				
+				if(sendcount == FRAME_LENGTH)
+				begin
+					state <= 4'd7;
+					fifo_rd_clk <= 1'b0;
+					Spi_Valid <= 1'b0;
+				end
+				else
+				begin
+					Spi_Valid <= 1'b1;
+					fifo_rd_clk <= 1'b1;
+					
+					case(route)
+						2'd0:begin data <= q0;end
+						2'd1:begin data <= q1;end
+						2'd2:begin data <= q2;end
+						2'd3:begin data <= q3;end
+					endcase
+				end
+			end
+			else
+			begin
+				Spi_Valid <= 1'b0;
+				fifo_rd_clk <= 1'b0;
+			end
+		end
+	end
+	7:
+	begin
+		Spi_Valid <= 1'b0;
+		route <= route + 1;
+		
+		case(route)
+		2'd0:begin rdreq0 <= 1'b0; state <= 4'd3;end
+		2'd1:begin rdreq1 <= 1'b0; state <= 4'd3;end
+		2'd2:begin rdreq2 <= 1'b0; state <= 4'd3;end
+		2'd3:begin rdreq3 <= 1'b0; state <= 4'd8;end
+		endcase
+		
+	end
+	8:                      //清空fifo数据
+	begin
+		route <= 0;
+		fifo0_aclr <= 1'b1;
+		fifo1_aclr <= 1'b1;
+		fifo2_aclr <= 1'b1;
+		fifo3_aclr <= 1'b1;
+		state <= 4'd9;
+	end
+	9:
+	begin
+		fifo_wr_enable <= 1; //打开fifo缓存开关
+		state <= 4'd0;
+		fifo0_aclr <= 1'b0;
+		fifo1_aclr <= 1'b0;
+		fifo2_aclr <= 1'b0;
+		fifo3_aclr <= 1'b0;		
+	end
+	endcase
+
+end
+
+//////////////////////////////////////////////////////////////////
+//            SPI接口                                           //
+//                                                              //
+//////////////////////////////////////////////////////////////////
+reg Spi_Valid;
+wire Spi_end;
+
+spi_16bit_core spi_inst000(
+		.clk(clk),
+		.SCK(SCK),
+		.MOSI(MOSI),
+		.MISO(MISO),
+		.NSS(NSS),
+		.sink_ready(Spi_Ready),		
+		.sink_valid(Spi_Valid),        //
+		.sink_data(data)      //[15:0]
+);
+
+
+
+
+wire Spi_Ready;
+
+						//output reg sink_ready,
+						
+						//input wire sink_valid,
+						//input wire [15:0]	sink_data
+						
+endmodule
+								

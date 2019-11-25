@@ -1,0 +1,158 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Mon Nov 18 11:20:05 2019
+| Host         : Jack-PC running 64-bit Service Pack 1  (build 7601)
+| Command      : report_control_sets -verbose -file xilinx_wmy_control_sets_placed.rpt
+| Design       : xilinx_wmy
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    84 |
+| Unused register locations in slices containing registers |   203 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            5 |
+|      2 |            1 |
+|      3 |            2 |
+|      4 |           11 |
+|      5 |            3 |
+|      6 |            3 |
+|      8 |           11 |
+|      9 |            3 |
+|     11 |            2 |
+|     15 |            1 |
+|    16+ |           42 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             245 |           90 |
+| No           | No                    | Yes                    |               4 |            1 |
+| No           | Yes                   | No                     |             412 |          115 |
+| Yes          | No                    | No                     |             369 |          105 |
+| Yes          | No                    | Yes                    |              33 |            8 |
+| Yes          | Yes                   | No                     |             910 |          242 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+------------------+----------------+
+|         Clock Signal         |                                                      Enable Signal                                                      |                     Set/Reset Signal                    | Slice Load Count | Bel Load Count |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+------------------+----------------+
+|  instance_name/inst/clk_out1 | LineDecode_inst/Linecode_inst6/dcode11[0]_i_1__0_n_0                                                                    |                                                         |                1 |              1 |
+|  instance_name/inst/clk_out1 | LineDecode_inst/Linecode_inst7/dcode11[0]_i_1__1_n_0                                                                    |                                                         |                1 |              1 |
+|  instance_name/inst/clk_out1 | LineDecode_inst/Linecode_inst5/dcode11[0]_i_1_n_0                                                                       |                                                         |                1 |              1 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/lineDecode_inst1/SS[0]                  |                1 |              1 |
+|  instance_name/inst/clk_out1 | uart_tx_inst/tx_i_1_n_0                                                                                                 | uart_tx_inst/phase0                                     |                1 |              1 |
+|  demux_sclk_BUFG             | wmy_run                                                                                                                 | demultiple_inst/count                                   |                1 |              2 |
+|  instance_name/inst/clk_out1 | LineDecode_inst/Linecode_inst10/r0[1]_i_1_n_0                                                                           | LineDecode_inst/Linecode_inst10/r[3]_i_1_n_0            |                1 |              3 |
+|  count_reg_n_0_[1]           |                                                                                                                         |                                                         |                2 |              3 |
+|  SYS_CLK_IBUF_BUFG           | U_E1_Framer/Frame_Cnt                                                                                                   | U_E1_Framer/AR[0]                                       |                1 |              4 |
+|  instance_name/inst/clk_out1 | LineCode_init1/Linecode_inst1/ocode102_out                                                                              |                                                         |                2 |              4 |
+|  SYS_CLK_IBUF_BUFG           |                                                                                                                         | U_E1_Framer/AR[0]                                       |                1 |              4 |
+|  instance_name/inst/clk_out1 | demultiple_inst/fifo_generator_inst0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/E[0]       | demultiple_inst/aclr                                    |                1 |              4 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/start_sample                                                                                               | uart_rx_inst/phase0                                     |                2 |              4 |
+|  instance_name/inst/clk_out1 | wmy_inst/count_data[3]_i_2_n_0                                                                                          | wmy_inst/count_data[3]_i_1_n_0                          |                1 |              4 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | demultiple_inst/aclr                                    |                1 |              4 |
+|  instance_name/inst/clk_out1 | uart_tx_inst/start_cc                                                                                                   | uart_tx_inst/phase0                                     |                1 |              4 |
+|  instance_name/inst/clk_out1 | LineCode_init1/Linecode_inst1/E[0]                                                                                      |                                                         |                1 |              4 |
+|  SYS_CLK_IBUF_BUFG           | U_E1_Framer/CRC4_Result                                                                                                 | U_E1_Framer/AR[0]                                       |                1 |              4 |
+|  instance_name/inst/clk_out1 | LineCode_init1/Linecode_inst10/FSM_onehot_ST[3]_i_1_n_0                                                                 |                                                         |                1 |              4 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/lineDecode_inst1/dcode1_reg[1]_1        |                4 |              5 |
+|  demux_sclk_BUFG             |                                                                                                                         |                                                         |                2 |              5 |
+|  SYS_CLK_IBUF_BUFG           | U_E1_Framer/Slot_Cnt                                                                                                    | U_E1_Framer/AR[0]                                       |                1 |              5 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | U_E1_Framer/AR[0]                                       |                4 |              6 |
+|  instance_name/inst/clk_out1 | LineDecode_inst/Linecode_inst8/dcode11[2]_i_1__1_n_0                                                                    |                                                         |                3 |              6 |
+|  instance_name/inst/clk_out1 | uart_tx_inst/wmy_pulse_count_reg[17][0]                                                                                 | wmy_pulse_st[5]_i_1_n_0                                 |                2 |              6 |
+|  instance_name/inst/clk_out1 | uart_tx_inst/tx_data                                                                                                    |                                                         |                2 |              8 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | wmy_inst/SR[0]                                          |                5 |              8 |
+|  instance_name/inst/clk_out1 | uart_tx_inst/E[0]                                                                                                       |                                                         |                6 |              8 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/rr_1                                                                                                       |                                                         |                1 |              8 |
+|  instance_name/inst/clk_out1 | demultiple_inst/fifo_generator_inst0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/E[0]       | demultiple_inst/aclr                                    |                2 |              8 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/data[7]_i_1_n_0                                                                                            |                                                         |                2 |              8 |
+|  instance_name/inst/clk_out1 | demultiple_inst/fifo_generator_inst0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/rd_en_0[0] | demultiple_inst/aclr                                    |                2 |              8 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/E[0]                                                                                                       | U_E1_Framer/AR[0]                                       |                2 |              8 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/address_reg[1]_1[0]                                                                                        | U_E1_Framer/AR[0]                                       |                5 |              8 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/address_reg[1]_2[0]                                                                                        | U_E1_Framer/AR[0]                                       |                1 |              8 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/write_reg_0[0]                                                                                             | U_E1_Framer/AR[0]                                       |                2 |              8 |
+|  instance_name/inst/clk_out1 | LineCode_init1/Linecode_inst1/dclk1_reg_0                                                                               |                                                         |                4 |              9 |
+|  instance_name/inst/clk_out1 | wmy_inst/p_0_in                                                                                                         |                                                         |                3 |              9 |
+|  instance_name/inst/clk_out1 | LineDecode_inst/Linecode_inst10/r0[1]_i_1_n_0                                                                           |                                                         |                4 |              9 |
+|  instance_name/inst/clk_out1 | wmy_inst/WMcount[10]_i_1_n_0                                                                                            | wmy_inst/SR[0]                                          |                4 |             11 |
+|  instance_name/inst/clk_out1 | wmy_inst/Ccount[10]_i_1_n_0                                                                                             | wmy_inst/SR[0]                                          |                4 |             11 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | reset_count[15]_i_1_n_0                                 |                4 |             15 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | demultiple_inst/ccc[15]_i_1_n_0                         |                4 |             16 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | dpll_inst/edge_flag                                     |                4 |             16 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/address_reg[2]_1[0]                                                                                        | U_E1_Framer/AR[0]                                       |                3 |             16 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/address_reg[2]_0[0]                                                                                        | U_E1_Framer/AR[0]                                       |                2 |             16 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/address_reg[2]_1[1]                                                                                        | U_E1_Framer/AR[0]                                       |                6 |             16 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/address_reg[1]_0[0]                                                                                        | U_E1_Framer/AR[0]                                       |                3 |             16 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/address_reg[2]_0[1]                                                                                        | U_E1_Framer/AR[0]                                       |                3 |             16 |
+|  demux_sclk_BUFG             | wmy_run                                                                                                                 |                                                         |                6 |             17 |
+|  SYS_CLK_IBUF_BUFG           | U_E1_Framer/En_E1                                                                                                       | U_E1_Framer/AR[0]                                       |                5 |             20 |
+|  instance_name/inst/clk_out1 | wmy_inst/INSERT_Count[20]_i_2_n_0                                                                                       | wmy_inst/INSERT_Count[20]_i_1_n_0                       |                5 |             21 |
+|  instance_name/inst/clk_out1 | LineDecode_inst/DataInSyn_inst_0/Dcount1                                                                                | LineDecode_inst/DataInSyn_inst_0/Dcount1[0]_i_1_n_0     |                6 |             21 |
+|  instance_name/inst/clk_out1 | wmy_inst/Mbuf[25]_i_1_n_0                                                                                               | wmy_inst/SR[0]                                          |               10 |             25 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/wdata[15]_i_1_n_0                                                                                          |                                                         |                5 |             28 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/lineDecode_inst1/SR[0]                  |                8 |             30 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/Linecode_inst4/dcode2_reg[0]_0          |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/Linecode_inst4/dcode2_reg[0]_1          |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/Linecode_inst4/dcode2_reg[0]_2          |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/Linecode_inst4/clkcount[0]_i_1__6_n_0   |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/lineDecode_inst1/clkcount[0]_i_1__4_n_0 |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/lineDecode_inst1/dcode1_reg[0]_0        |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/lineDecode_inst1/dcode1_reg[0]_1        |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/lineDecode_inst1/dcode1_reg[0]_2        |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | LineDecode_inst/lineDecode_inst1/dcode2_reg[1]_0        |                8 |             31 |
+|  instance_name/inst/clk_out1 | LineDecode_inst/DataInSyn_inst_0/Dcount2                                                                                | LineDecode_inst/DataInSyn_inst_0/Dcount2[0]_i_1_n_0     |                8 |             31 |
+|  instance_name/inst/clk_out1 |                                                                                                                         | count[31]_i_1_n_0                                       |                8 |             32 |
+|  instance_name/inst/clk_out1 | demultiple_inst/wmy_time[0]_i_1__0_n_0                                                                                  | wmy_inst/SR[0]                                          |                8 |             32 |
+|  instance_name/inst/clk_out1 | wmy_inst/wmy_time[0]_i_1_n_0                                                                                            | wmy_inst/SR[0]                                          |                8 |             32 |
+|  instance_name/inst/clk_out1 | sendst_reg_n_0                                                                                                          | uart_tx_inst/sendst_reg                                 |                8 |             32 |
+|  instance_name/inst/clk_out1 | uart_tx_inst/phase                                                                                                      | uart_tx_inst/phase0                                     |                8 |             33 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/phase                                                                                                      | uart_rx_inst/phase0                                     |               10 |             34 |
+|  instance_name/inst/clk_out1 | demultiple_inst/count_wm_c_pre0                                                                                         | wmy_inst/SR[0]                                          |               12 |             47 |
+|  instance_name/inst/clk_out1 | demultiple_inst/count_c_pre0                                                                                            | wmy_inst/SR[0]                                          |               12 |             48 |
+|  instance_name/inst/clk_out1 | wmy_inst/count_c_pre0                                                                                                   | wmy_inst/SR[0]                                          |               12 |             48 |
+|  instance_name/inst/clk_out1 | demultiple_inst/count_500ms_1                                                                                           | wmy_inst/SR[0]                                          |               17 |             48 |
+|  instance_name/inst/clk_out1 | wmy_inst/count_wm_c_pre0                                                                                                | wmy_inst/SR[0]                                          |               12 |             48 |
+|  instance_name/inst/clk_out1 | wmy_inst/count_500ms                                                                                                    | wmy_inst/SR[0]                                          |               11 |             48 |
+|  instance_name/inst/clk_out1 | uart_rx_inst/valid                                                                                                      |                                                         |               10 |             72 |
+|  instance_name/inst/clk_out1 | demultiple_inst/count_c_0                                                                                               | wmy_inst/SR[0]                                          |               20 |             88 |
+|  instance_name/inst/clk_out1 | wmy_inst/count_c_delta[47]_i_1_n_0                                                                                      |                                                         |               24 |             92 |
+|  instance_name/inst/clk_out1 | wmy_inst/count_c                                                                                                        | wmy_inst/SR[0]                                          |               26 |             96 |
+|  instance_name/inst/clk_out1 | wmy_inst/data_valid                                                                                                     |                                                         |               28 |            119 |
+|  instance_name/inst/clk_out1 |                                                                                                                         |                                                         |               86 |            239 |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+------------------+----------------+
+
+

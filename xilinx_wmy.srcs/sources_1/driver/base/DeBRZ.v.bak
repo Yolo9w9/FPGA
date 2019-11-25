@@ -1,0 +1,78 @@
+module DeBRZ(
+					input wire clk,
+					input wire reset_n,			
+					input wire[7:0] reg01,
+					input wire code1,
+					input wire code2,
+					output reg dedlk,
+					output reg decode
+					
+);
+
+parameter COUNT_2K = 32768;//2^15
+parameter COUNT_4K = 16384;//2^14
+parameter COUNT_8K = 8192;//2^13
+parameter COUNT_16K = 4096;//2^12
+parameter COUNT_32K = 2048;//2^11
+parameter COUNT_64K = 1024;//2^10
+parameter COUNT_128K = 512;//2^9
+parameter COUNT_256K = 256;//2^8
+parameter COUNT_512K = 128;//2^7
+parameter COUNT_1024K = 64;//2^6
+
+
+
+reg[20:0] CmpCount;
+reg[20:0] CmpCount1;
+always @(posedge clk)begin
+	case(reg01)
+		1:begin  CmpCount <= COUNT_2K; CmpCount1 <= COUNT_2K>>1;  end
+		5:begin  CmpCount <= COUNT_32K; CmpCount1 <= COUNT_32K>>1;  end
+		6:begin  CmpCount <= COUNT_64K; CmpCount1 <= COUNT_64K>>1;  end
+		7:begin  CmpCount <= COUNT_128K; CmpCount1 <= COUNT_128K>>1;  end
+	endcase
+end
+
+reg[20:0] clkcount ;
+reg[1:0] dcode1,dcode2;
+always @(posedge clk)begin
+	dcode1 <= {dcode1[0],code1};
+	dcode2 <= {dcode2[0],code2};
+	
+	if(dcode2 == 2'b10)
+	begin
+		dedlk <= 1'b0;
+		clkcount <= 0;
+	end
+	else
+	begin
+		if(clkcount == CmpCount1)
+		begin
+			dedlk <= 1'b1;
+			clkcount <= clkcount + 1'b1;
+		end
+		else if(clkcount == CmpCount)
+		begin
+			clkcount <= 0;
+			dedlk <= 1'b0;
+		end
+		else
+			clkcount <= clkcount + 1'b1;
+	end
+end
+
+
+reg[10:0] clkbuf;
+always @(posedge clk)begin
+	clkbuf <= {clkbuf[9:0],dedlk};
+	
+	if(clkbuf[10:9] == 2'b10)
+	begin
+		if(code2 == 0)
+			decode <= 1'b1;
+		else
+			decode <= 1'b0;
+	end
+end
+
+endmodule

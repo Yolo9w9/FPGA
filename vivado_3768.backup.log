@@ -1,0 +1,305 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Nov 16 13:35:32 2019
+# Process ID: 3768
+# Current directory: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7404 F:\WHR\Project\20191111sanjiangbisaiFPGA\wmy\xilinx_wmy.xpr
+# Log file: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/vivado.log
+# Journal file: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 711.371 ; gain = 104.988
+update_compile_order -fileset sources_1
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+set_property PROGRAM.FILE {F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE true [get_runs impl_1]
+create_hw_cfgmem -hw_device [lindex [get_hw_devices xc7a35t_0] 0] [lindex [get_cfgmem_parts {n25q64-3.3v-spi-x1_x2_x4}] 0]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sat Nov 16 13:41:20 2019] Launched impl_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/runme.log
+set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.FILES [list "F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bin" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+startgroup 
+create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a35t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a35t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]; refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0];
+INFO: [Labtools 27-3164] End of startup status: HIGH
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 SPI core(s).
+program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+Mfg ID : 20   Memory Type : ba   Memory Capacity : 17   Device ID 1 : 0   Device ID 2 : 0
+Performing Erase Operation...
+Erase Operation successful.
+Performing Program and Verify Operations...
+Program/Verify Operation successful.
+INFO: [Labtoolstcl 44-377] Flash programming completed successfully
+program_hw_cfgmem: Time (s): cpu = 00:00:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1892.730 ; gain = 0.000
+endgroup
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_wiz_0 -dir f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {131.072} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {53.250} CONFIG.MMCM_CLKIN1_PERIOD {10.000} CONFIG.MMCM_CLKIN2_PERIOD {10.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {8.125} CONFIG.CLKOUT1_JITTER {217.735} CONFIG.CLKOUT1_PHASE_ERROR {298.992}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+launch_runs -jobs 4 clk_wiz_0_synth_1
+[Sat Nov 16 14:25:19 2019] Launched clk_wiz_0_synth_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/clk_wiz_0_synth_1/runme.log
+export_simulation -of_objects [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files/sim_scripts -ip_user_files_dir F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files -ipstatic_source_dir F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/modelsim} {questa=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/questa} {riviera=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/riviera} {activehdl=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.USE_LOCKED {false} CONFIG.USE_RESET {false}] [get_ips clk_wiz_0]
+generate_target all [get_files  f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+reset_run clk_wiz_0_synth_1
+launch_runs -jobs 4 clk_wiz_0_synth_1
+[Sat Nov 16 14:26:51 2019] Launched clk_wiz_0_synth_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/clk_wiz_0_synth_1/runme.log
+export_simulation -of_objects [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files/sim_scripts -ip_user_files_dir F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files -ipstatic_source_dir F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/modelsim} {questa=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/questa} {riviera=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/riviera} {activehdl=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sat Nov 16 14:28:02 2019] Launched synth_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/runme.log
+[Sat Nov 16 14:28:02 2019] Launched impl_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/runme.log
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'instance_name/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.400 . Memory (MB): peak = 2960.844 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.400 . Memory (MB): peak = 2960.844 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2960.844 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:34 ; elapsed = 00:00:28 . Memory (MB): peak = 3069.941 ; gain = 756.426
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+close_design
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+set_property PROGRAM.FILE {F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+create_hw_cfgmem -hw_device [get_hw_devices xc7a35t_0] -mem_dev [lindex [get_cfgmem_parts {n25q64-3.3v-spi-x1_x2_x4}] 0]
+set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.FILES [list "F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bin" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+startgroup 
+create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a35t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a35t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]; refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0];
+INFO: [Labtools 27-3164] End of startup status: HIGH
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 SPI core(s).
+program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+Mfg ID : 20   Memory Type : ba   Memory Capacity : 17   Device ID 1 : 0   Device ID 2 : 0
+Performing Erase Operation...
+Erase Operation successful.
+Performing Program and Verify Operations...
+Program/Verify Operation successful.
+INFO: [Labtoolstcl 44-377] Flash programming completed successfully
+program_hw_cfgmem: Time (s): cpu = 00:00:04 ; elapsed = 00:01:06 . Memory (MB): peak = 3437.098 ; gain = 0.000
+endgroup
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.2 -module_name fifo_generator_0 -dir f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip
+set_property -dict [list CONFIG.INTERFACE_TYPE {Native} CONFIG.Performance_Options {Standard_FIFO} CONFIG.Input_Data_Width {10} CONFIG.Input_Depth {16} CONFIG.Output_Data_Width {10} CONFIG.Output_Depth {16} CONFIG.Enable_ECC {false} CONFIG.Use_Embedded_Registers {false} CONFIG.Reset_Type {Synchronous_Reset} CONFIG.Full_Flags_Reset_Value {0} CONFIG.Use_Dout_Reset {true} CONFIG.Almost_Full_Flag {true} CONFIG.Almost_Empty_Flag {true} CONFIG.Valid_Flag {false} CONFIG.Overflow_Flag {false} CONFIG.Use_Extra_Logic {false} CONFIG.Data_Count_Width {4} CONFIG.Write_Data_Count_Width {4} CONFIG.Read_Data_Count_Width {4} CONFIG.Full_Threshold_Assert_Value {14} CONFIG.Full_Threshold_Negate_Value {13} CONFIG.Empty_Threshold_Assert_Value {2} CONFIG.Empty_Threshold_Negate_Value {3} CONFIG.FIFO_Implementation_wach {Common_Clock_Distributed_RAM} CONFIG.Full_Threshold_Assert_Value_wach {15} CONFIG.Empty_Threshold_Assert_Value_wach {14} CONFIG.FIFO_Implementation_wrch {Common_Clock_Distributed_RAM} CONFIG.Full_Threshold_Assert_Value_wrch {15} CONFIG.Empty_Threshold_Assert_Value_wrch {14} CONFIG.FIFO_Implementation_rach {Common_Clock_Distributed_RAM} CONFIG.Full_Threshold_Assert_Value_rach {15} CONFIG.Empty_Threshold_Assert_Value_rach {14} CONFIG.Enable_Safety_Circuit {false}] [get_ips fifo_generator_0]
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'Empty_Threshold_Assert_Value_wrch' from '1022' to '14' has been ignored for IP 'fifo_generator_0'
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'Empty_Threshold_Assert_Value_wach' from '1022' to '14' has been ignored for IP 'fifo_generator_0'
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'Empty_Threshold_Assert_Value_rach' from '1022' to '14' has been ignored for IP 'fifo_generator_0'
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'Full_Threshold_Assert_Value_wrch' from '1023' to '15' has been ignored for IP 'fifo_generator_0'
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'Full_Threshold_Assert_Value_wach' from '1023' to '15' has been ignored for IP 'fifo_generator_0'
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'Full_Threshold_Assert_Value_rach' from '1023' to '15' has been ignored for IP 'fifo_generator_0'
+generate_target {instantiation_template} [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_generator_0'...
+generate_target all [get_files  f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_generator_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fifo_generator_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'fifo_generator_0'...
+catch { config_ip_cache -export [get_ips -all fifo_generator_0] }
+export_ip_user_files -of_objects [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci]
+launch_runs -jobs 4 fifo_generator_0_synth_1
+[Sat Nov 16 17:05:59 2019] Launched fifo_generator_0_synth_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/fifo_generator_0_synth_1/runme.log
+export_simulation -of_objects [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci] -directory F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files/sim_scripts -ip_user_files_dir F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files -ipstatic_source_dir F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/modelsim} {questa=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/questa} {riviera=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/riviera} {activehdl=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.Reset_Pin {false} CONFIG.Reset_Type {Asynchronous_Reset} CONFIG.Use_Dout_Reset {false}] [get_ips fifo_generator_0]
+generate_target all [get_files  f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_generator_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_generator_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fifo_generator_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'fifo_generator_0'...
+catch { config_ip_cache -export [get_ips -all fifo_generator_0] }
+export_ip_user_files -of_objects [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci] -no_script -sync -force -quiet
+reset_run fifo_generator_0_synth_1
+launch_runs -jobs 4 fifo_generator_0_synth_1
+[Sat Nov 16 17:09:38 2019] Launched fifo_generator_0_synth_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/fifo_generator_0_synth_1/runme.log
+export_simulation -of_objects [get_files f:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci] -directory F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files/sim_scripts -ip_user_files_dir F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files -ipstatic_source_dir F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/modelsim} {questa=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/questa} {riviera=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/riviera} {activehdl=F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sat Nov 16 17:10:00 2019] Launched fifo_generator_0_synth_1, synth_1...
+Run output will be captured here:
+fifo_generator_0_synth_1: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/fifo_generator_0_synth_1/runme.log
+synth_1: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/runme.log
+[Sat Nov 16 17:10:00 2019] Launched impl_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/runme.log
+set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.FILES [list "F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bin" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.PRM_FILE {} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.UNUSED_PIN_TERMINATION {pull-none} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+startgroup 
+create_hw_bitstream -hw_device [lindex [get_hw_devices xc7a35t_0] 0] [get_property PROGRAM.HW_CFGMEM_BITFILE [ lindex [get_hw_devices xc7a35t_0] 0]]; program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]; refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0];
+INFO: [Labtools 27-3164] End of startup status: HIGH
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 SPI core(s).
+program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7a35t_0] 0]]
+Mfg ID : 20   Memory Type : ba   Memory Capacity : 17   Device ID 1 : 0   Device ID 2 : 0
+Performing Erase Operation...
+Erase Operation successful.
+Performing Program and Verify Operations...
+Program/Verify Operation successful.
+INFO: [Labtoolstcl 44-377] Flash programming completed successfully
+program_hw_cfgmem: Time (s): cpu = 00:00:02 ; elapsed = 00:01:06 . Memory (MB): peak = 3437.098 ; gain = 0.000
+endgroup
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sat Nov 16 17:36:13 2019] Launched synth_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/runme.log
+[Sat Nov 16 17:36:13 2019] Launched impl_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sat Nov 16 17:45:26 2019] Launched synth_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/synth_1/runme.log
+[Sat Nov 16 17:45:26 2019] Launched impl_1...
+Run output will be captured here: F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {F:/WHR/Project/20191111sanjiangbisaiFPGA/wmy/xilinx_wmy.runs/impl_1/xilinx_wmy.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
